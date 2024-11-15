@@ -1,0 +1,630 @@
+/* Fondo de la página con degradado linear */
+body {
+    background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Colores más vibrantes */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Asegura que el contenido se acomode bien en pantallas pequeñas */
+    padding: 20px;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+/* Cuadro para la información personal */
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ccc; /* Borde sutil */
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 20px;
+    max-width: 320px; /* Ajuste del tamaño */
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease-in-out;
+}
+
+.personal-info:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+/* Estilo de la imagen de perfil */
+.photo-container {
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Redondeo completo */
+    object-fit: cover;
+    border: 3px solid #fff; /* Borde blanco para resaltar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra de la imagen */
+}
+
+/* Nombre y rol del usuario */
+.name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333; /* Color oscuro para mayor contraste */
+    margin-bottom: 5px;
+}
+
+.competence {
+    font-size: 18px;
+    color: #666; /* Color más suave para el texto */
+    margin-bottom: 20px;
+}
+
+/* Estilo de los enlaces de redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0077b5; /* Color más vibrante al pasar el ratón */
+}
+
+/* Botón de descarga de CV */
+.cv-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px; /* Bordes más suaves */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.cv-button:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor de Información Dura */
+.hard-info {
+    width: 60%;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hard-info:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+}
+
+/* Barra de navegación de las secciones */
+.info-navbar {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    background-color: #4A90E2;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.info-navbar button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.info-navbar button:hover {
+    background-color: #3a7dc2;
+    transform: scale(1.1); /* Efecto de aumento de tamaño */
+}
+
+/* Estilo de las secciones de contenido */
+.info-section {
+    display: none;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.info-section h2 {
+    color: #4A90E2;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Estilo para mostrar la sección seleccionada */
+#about, #certificates, #competencies {
+    display: block; /* Se muestran dinámicamente con JavaScript */
+}
+
+/* Media queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Diseño en columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .hard-info, .personal-info {
+        max-width: 90%; /* Asegura que los cuadros no se vean demasiado pequeños */
+    }
+
+    .info-navbar {
+        flex-direction: column;
+    }
+
+    .info-navbar button {
+        width: 100%; /* Botones en bloque en pantallas pequeñas */
+        margin-bottom: 10px;
+    }
+}
+/* Sección de Proyectos */
+.info-section#projects {
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la sección de proyectos */
+.info-section#projects h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Sección de Proyectos */
+.info-section#projects {
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de la sección de proyectos */
+.info-section#projects h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Diseño de las tarjetas de proyecto */
+.project {
+    background-color: #4A90E2; /* Color de fondo de la tarjeta */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* Color del texto blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover sobre las tarjetas para efectos */
+.project:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
+}
+
+/* Título de cada proyecto */
+.project-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Mantiene el color blanco para los títulos */
+    margin-bottom: 10px;
+}
+
+/* Descripción del proyecto */
+.project-description {
+    font-size: 16px;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 15px;
+}
+
+/* Herramientas utilizadas */
+.project-tools {
+    font-size: 14px;
+    color: #ffffff; /* Texto blanco */
+    font-style: italic;
+}
+
+/* Diseño de la lista de proyectos */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Espacio entre tarjetas */
+    justify-content: space-around; /* Alinea las tarjetas en el centro */
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 80%; /* Asegura que las tarjetas ocupen menos espacio en pantallas pequeñas */
+    }
+
+    .project-title {
+        font-size: 22px; /* Títulos más pequeños en pantallas pequeñas */
+    }
+}
+/* Sección de Habilidades */
+.info-section#competencies {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+/* Título de la sección de habilidades */
+.info-section#competencies h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.info-section#competencies h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #4A90E2; /* Azul similar al de las tarjetas */
+    border-radius: 2px;
+}
+
+/* Estilo de las habilidades - Utilizando tarjetas sin puntos */
+.info-section#competencies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Distribuye en varias columnas responsivas */
+}
+
+/* Estilo de cada ítem de habilidad */
+.info-section#competencies ul li {
+    background-color: #4A90E2; /* Fondo azul */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* Efecto hover sobre los ítems de la lista */
+.info-section#competencies ul li:hover {
+    transform: translateY(-5px); /* Sube un poco el ítem al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Estilo del icono dentro de la tarjeta (puedes agregar un ícono con Font Awesome o imágenes) */
+.info-section#competencies ul li .icon {
+    font-size: 40px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+
+/* Estilo para el texto de las habilidades */
+.info-section#competencies ul li strong {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilo para la descripción de la habilidad */
+.info-section#competencies ul li p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .info-section#competencies ul {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más pequeñas */
+    }
+}
+/* Sección de Certificaciones */
+.info-section#certificates {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Título de la sección de Certificaciones */
+.info-section#certificates h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.info-section#certificates h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #4A90E2; /* Azul similar al de las tarjetas */
+    border-radius: 2px;
+}
+
+/* Estilo de las certificaciones - Utilizando tarjetas */
+.info-section#certificates ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Distribuye las certificaciones en columnas responsivas */
+}
+
+/* Estilo de cada certificación */
+.info-section#certificates ul li {
+    background-color: #4A90E2; /* Fondo azul */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Efecto hover sobre las certificaciones */
+.info-section#certificates ul li:hover {
+    transform: translateY(-5px); /* Sube un poco la certificación al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Estilo del icono dentro de la tarjeta (puedes agregar un ícono con Font Awesome o imágenes) */
+.info-section#certificates ul li .icon {
+    font-size: 40px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+
+/* Estilo del texto de la certificación */
+.info-section#certificates ul li strong {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilo para la descripción de la certificación */
+.info-section#certificates ul li p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .info-section#certificates ul {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más pequeñas */
+    }
+}
+/* Información personal */
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+}
+
+.photo-container {
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Redondeamos la foto */
+    object-fit: cover;
+    border: 4px solid #4A90E2; /* Borde de color principal */
+}
+
+.name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.competence {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #0077b5; /* Cambia de color al pasar el ratón */
+}
+
+.icon-img {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.cv-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4A90E2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.cv-button:hover {
+    background-color: #357ABD; /* Cambio de color al pasar el ratón */
+}
+
+/* Estilo de los iconos de las redes sociales */
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Agranda el icono al pasar el ratón */
+}
+/* Estilos generales para los íconos de redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.icon-img:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+}
+
+/* Estilos para la sección de Información de Contacto */
+.contact-info {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el botón de Descargar CV */
+.cv-button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cv-button:hover {
+    background-color: #5a3c88;
+}
+
+/* Estilos para la biografía */
+.biography {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.biography h3 {
+    color: #4A90E2;
+    margin-bottom: 10px;
+}
+
+
+
